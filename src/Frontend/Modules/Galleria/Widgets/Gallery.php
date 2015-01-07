@@ -32,10 +32,10 @@ class Gallery extends FrontendBaseWidget
 
 		//--Add css
 		$this->header->addCSS('/src/Frontend/Modules/' . $this->getModule() . '/Layout/Css/Galleria.css');
-		//$this->header->addCSS('/src/Frontend/Modules/' . $this->getModule() . '/Layout/Css/colorbox.css');
+		$this->header->addCSS('/src/Frontend/Modules/' . $this->getModule() . '/Layout/Css/Colorbox.css');
 
 		//--Add javascript
-		//$this->header->addJS('/src/Frontend/Modules/' . $this->getModule() . '/Js/Jquery.colorbox-min.js');
+		$this->header->addJS('/src/Frontend/Modules/' . $this->getModule() . '/Js/Jquery.colorbox-min.js');
 		$this->header->addJS('/src/Frontend/Modules/' . $this->getModule() . '/Js/Jquery.cycle.all.js');
 
 		$this->loadTemplate();
