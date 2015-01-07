@@ -17,11 +17,28 @@ jsFrontend.galleria =
 	init: function()
 	{
         //--Initialize colorbox to the gallery
-        $('ul.galleria-gallery li a').colorbox({rel:'group', maxHeight: '80%', maxWidth: '80%'});
-
+ 	$('.galleria-gallery ul li a').colorbox({
+		rel:'group', 
+		transition:'elastic', 
+		preloading:'true', 
+		closebutton:'true', 
+		maxHeight: '80%', 
+		maxWidth: '80%',
+		fixed:'true',
+       		scrolling:'false',
+       		transition:'fade',
+        	onOpen: function(){
+      			$("#colorbox").css("opacity", 0);
+                },
+       		onComplete: function(){
+       			$("#cboxOverlay").animate({"opacity": 1});
+             		$("#colorbox").animate({"opacity": 1});
+        	}
+	});
 
         //--Initialize slidehow
-        $('ul.galleria-slideshow').cycle();
+        $('.galleria-slideshow ul li a').cycle();
+        
 	}
 }
 
