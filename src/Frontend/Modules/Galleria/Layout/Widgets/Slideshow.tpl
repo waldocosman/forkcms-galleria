@@ -11,3 +11,5 @@
     {/iteration:widgetSlideshow}
 </ul>
 {/option:widgetSlideshow}
+
+{* $widgetSlideshow|dump *}
