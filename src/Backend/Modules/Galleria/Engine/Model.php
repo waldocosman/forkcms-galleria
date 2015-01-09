@@ -76,10 +76,10 @@ class Model
 		$item = self::getAlbumFromId($id);
 
 		// build extra
-		$extra = array('id' => $item['extra_id'], 'module' => 'Galleria', 'type' => 'widget', 'action' => 'gallery');
+		$extra = array('id' => $item['extra_id'], 'module' => 'Galleria', 'type' => 'widget');
 
 		// delete extra
-		$db->delete('modules_extras', 'id = ? AND module = ? AND type = ? AND action = ?', array($extra['id'], $extra['module'], $extra['type'], $extra['action']));
+		$db->delete('modules_extras', 'id = ? AND module = ? AND type = ?', array($extra['id'], $extra['module'], $extra['type']));
 
 		// update blocks with this item linked
 		$db->update('pages_blocks', array('extra_id' => null, 'html' => ''), 'extra_id = ?', array($item['extra_id']));
